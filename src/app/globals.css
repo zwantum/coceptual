@@ -175,6 +175,7 @@ section {
   animation: orbFloat 14s ease-in-out infinite;
 }
 
+/* 
 .orb-m {
   background: var(--magenta);
 }
@@ -185,7 +186,7 @@ section {
 
 .orb-p {
   background: var(--purple);
-}
+} */
 
 @keyframes orbFloat {
 
@@ -755,8 +756,7 @@ section {
 }
 
 /* ── WHY US ── */
-.why-grid {
-}
+.why-grid {}
 
 .why-list {
   display: flex;
@@ -877,8 +877,7 @@ section {
 }
 
 /* ── PROCESS ── */
-.process-grid {
-}
+.process-grid {}
 
 .process-step {
   text-align: center;
@@ -915,8 +914,7 @@ section {
 }
 
 /* ── PROJECTS ── */
-.projects-grid {
-}
+.projects-grid {}
 
 .project-card {
   border-radius: 18px;
@@ -974,8 +972,7 @@ section {
 }
 
 /* ── CITY GRID ── */
-.city-grid {
-}
+.city-grid {}
 
 .city-card {
   padding: 28px 22px;
@@ -1019,8 +1016,7 @@ section {
 }
 
 /* ── LEAD GEN ── */
-.lead-grid {
-}
+.lead-grid {}
 
 .lead-info h2 {
   margin-bottom: 14px;
@@ -1102,8 +1098,7 @@ section {
   margin-bottom: 26px;
 }
 
-.form-row {
-}
+.form-row {}
 
 .form-group {
   margin-bottom: 14px;
@@ -1583,7 +1578,7 @@ footer {
   }
 }
 
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 :root {
   --magenta: #E020B0;
@@ -1617,7 +1612,7 @@ body {
   color: var(--text-dark);
   line-height: 1.7;
   overflow-x: hidden;
-}
+} */
 
 a {
   color: inherit;
@@ -1730,58 +1725,6 @@ section {
   width: 1px;
   height: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
-}
-
-/* ── ORBS ── */
-.orb-field {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.35;
-  animation: orbFloat 14s ease-in-out infinite;
-}
-
-.orb-m {
-  background: var(--magenta);
-}
-
-.orb-o {
-  background: var(--orange);
-}
-
-.orb-p {
-  background: var(--purple);
-}
-
-@keyframes orbFloat {
-
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  33% {
-    transform: translate(30px, -40px) scale(1.08);
-  }
-
-  66% {
-    transform: translate(-20px, 30px) scale(0.94);
-  }
-}
-
-.orb:nth-child(2) {
-  animation-delay: -5s;
-}
-
-.orb:nth-child(3) {
-  animation-delay: -9s;
 }
 
 /* ── BRAND DOTS ── */
@@ -2445,156 +2388,7 @@ nav {
   color: var(--text-muted);
 }
 
-/* ── PROCESS ── */
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
 
-.process-step {
-  text-align: center;
-}
-
-.process-card {
-  padding: 32px 20px;
-  height: 100%;
-}
-
-.pstep-num {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--grad);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin: 0 auto 18px;
-  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.3);
-}
-
-.process-card h4 {
-  color: var(--text-dark);
-  margin-bottom: 8px;
-}
-
-.process-card p {
-  font-size: 0.84rem;
-  color: var(--text-muted);
-}
-
-/* ── PROJECTS ── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.project-card {
-  border-radius: 18px;
-  overflow: hidden;
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-card>.glass-card {
-  border-radius: 18px;
-}
-
-.project-img {
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.72rem;
-  color: rgba(123, 63, 228, 0.4);
-  letter-spacing: 0.1em;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.project-info {
-  padding: 18px 20px 20px;
-}
-
-.project-tag {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 6px;
-  margin-bottom: 8px;
-  background: linear-gradient(135deg, rgba(224, 32, 176, 0.1), rgba(123, 63, 228, 0.1));
-  color: var(--purple);
-}
-
-.project-info h4 {
-  color: var(--text-dark);
-  margin-bottom: 4px;
-  font-size: 0.95rem;
-}
-
-.project-info p {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* ── CITY GRID ── */
-.city-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.city-card {
-  padding: 28px 22px;
-  text-align: center;
-  transition: transform 0.3s;
-  position: relative;
-}
-
-.city-card:hover {
-  transform: translateY(-4px);
-}
-
-.city-primary-badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 0.66rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  background: var(--grad);
-  color: white;
-  padding: 3px 9px;
-  border-radius: 20px;
-}
-
-.city-icon {
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
-
-.city-card h4 {
-  color: var(--text-dark);
-  margin-bottom: 6px;
-  font-size: 1rem;
-}
-
-.city-card p {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
 
 /* ── LEAD GEN ── */
 .lead-grid {
@@ -3095,7 +2889,7 @@ footer {
   }
 }
 
-@media(max-width: 680px) {
+/* @media(max-width: 680px) {
   section {
     padding: 64px 0;
   }
@@ -3150,4 +2944,4 @@ footer {
   .hero-mini-cards {
     grid-template-columns: 1fr;
   }
-}
+} */

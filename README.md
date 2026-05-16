@@ -31,6 +31,39 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest and recommended way to deploy this Next.js application is via [Vercel](https://vercel.com/), the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Step-by-Step Deployment Guide
+
+1. **Push your code to GitHub:**
+   - Make sure your latest code is committed and pushed to a GitHub, GitLab, or Bitbucket repository.
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
+
+2. **Connect to Vercel:**
+   - Go to [Vercel.com](https://vercel.com/) and log in (or sign up).
+   - Click the **"Add New..."** button and select **"Project"**.
+   - Connect your GitHub/GitLab/Bitbucket account if you haven't already.
+   - Find your repository in the list and click **"Import"**.
+
+3. **Configure Project Setup:**
+   - **Project Name:** Choose a name (e.g., `coceptual-studio`).
+   - **Framework Preset:** Vercel should automatically detect **Next.js**.
+   - **Root Directory:** If your Next.js app is in a subfolder (like `coceptual-exact`), click **"Edit"** next to Root Directory and select it. Otherwise, leave it as `./`.
+   - **Environment Variables:** If you have any variables in a `.env` file (e.g., for analytics or contact forms), add them here.
+
+4. **Deploy:**
+   - Click the **"Deploy"** button.
+   - Vercel will build the project and deploy it. This usually takes 1-2 minutes.
+   - Once completed, you will get a live `your-project.vercel.app` URL!
+
+### Custom Domain Setup (Optional)
+If you have a custom domain for Coceptual Studio (e.g., `coceptualstudio.com`):
+1. Go to your project dashboard on Vercel.
+2. Navigate to **Settings** > **Domains**.
+3. Enter your custom domain and follow the instructions to update your DNS records (adding the provided A or CNAME records to your domain registrar).
+
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more detailed configurations.
