@@ -19,7 +19,7 @@ export default function Services() {
         <div className="orb orb-o hidden md:block w-[280px] h-[280px] -bottom-[80px] -left-[60px] opacity-[0.18]" style={{ animationDelay: '-7s' }}></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 max-w-[1180px] relative z-10">
+      <div className="container mx-auto px-6 md:px-8 max-w-[1180px] relative z-10">
         <ScrollReveal>
           <div className="section-head text-center mb-10 md:mb-[60px]">
             <SectionDots />

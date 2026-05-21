@@ -19,7 +19,7 @@ export default function Cities() {
         ></div>
       </OrbField>
 
-      <div className="container mx-auto px-4 md:px-8 max-w-[1180px]" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="container mx-auto px-6 md:px-8 max-w-[1180px]" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-head text-center mb-10 md:mb-[60px]">
           <SectionDots oOrder={1} mOrder={2} pOrder={3} />
           <div className="section-label mt-2">Where We Work</div>

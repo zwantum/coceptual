@@ -30,7 +30,7 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="py-16 md:py-24">
-      <div className="container mx-auto px-4 md:px-8 max-w-[1180px]">
+      <div className="container mx-auto px-6 md:px-8 max-w-[1180px]">
         <div className="section-head text-center mb-10 md:mb-[60px]">
           <SectionDots mOrder={1} oOrder={2} pOrder={3} />
           <div className="section-label mt-2">Common Questions</div>
@@ -67,7 +67,7 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="text-center mt-10">
+        <div className="text-center pt-10" style={{ marginTop: "30px" }}>
           <p className="text-[0.88rem] text-[var(--text-muted)] mb-4">Still have questions?</p>
           <a href="https://wa.me/91XXXXXXXXXX" className="btn btn-wa inline-flex items-center gap-2">
             💬 Ask us on WhatsApp

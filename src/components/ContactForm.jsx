@@ -33,7 +33,7 @@ export default function ContactForm() {
         <div className="orb orb-m w-[220px] h-[220px] top-[40%] right-[20%] opacity-[0.12]" style={{ animationDelay: '-13s' }}></div>
       </OrbField>
 
-      <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-[1180px]">
+      <div className="container relative z-10 mx-auto px-6 md:px-8 max-w-[1180px]">
         <div className="section-head text-center mb-[60px]">
           <SectionDots />
           <div className="section-label mt-2">Free Consultation</div>
@@ -45,7 +45,7 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <div className="lead-grid grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[72px] items-start">
+        <div className="lead-grid grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-[72px] items-start">
           {/* Left Side: Info */}
           <div className="lead-info">
             <div className="lead-features flex flex-col gap-4 mb-7">
@@ -84,7 +84,7 @@ export default function ContactForm() {
           </div>
 
           {/* Right Side: Form */}
-          <div className="glass-card form-card p-10 w-auto h-auto">
+          <div className="glass-card form-card p-7 md:p-10 w-full h-auto">
             <BrandDots dotSize="9px" oOrder={1} mOrder={2} pOrder={3} style={{ marginBottom: '14px' }} />
             <div className="form-title text-[1.2rem] font-extrabold text-[var(--text-dark)] mb-1">Start Your Interior Project</div>
             <div className="form-sub text-[0.84rem] text-[var(--text-muted)] mb-6">Fill in your details and we&apos;ll prepare a free, customised quote for your space in Ranchi.</div>

@@ -3,7 +3,7 @@
 export default function CTASection() {
   return (
     <div className="cta2-wrap py-16 md:py-[80px] relative">
-      <div className="container mx-auto px-4 md:px-8 max-w-[1180px]">
+      <div className="container mx-auto px-6 md:px-8 max-w-[1180px]">
         <div className="cta2-inner relative z-10 overflow-hidden bg-gradient-to-br from-[var(--magenta)] via-[var(--orange)] to-[var(--purple)] rounded-[28px] p-[36px] md:p-[60px_56px] flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           
           {/* Decorative Background Orbs (Pseudo-elements from original CSS) */}
@@ -28,7 +28,7 @@ export default function CTASection() {
           <div className="cta2-btns flex flex-wrap gap-3 shrink-0 relative z-10">
             <a 
               href="tel:+91XXXXXXXXXX" 
-              className="btn btn-white bg-white text-[var(--text-dark)] font-bold px-[26px] py-[13px] rounded-[10px] hover:bg-white/90 hover:-translate-y-0.5 transition-all shadow-md"
+              className="btn btn-ghost bg-white/15 text-white border-[1.5px] border-white/40 px-[26px] py-[13px] rounded-[10px] hover:bg-white/25 transition-all"
             >
               📞 Call Now
             </a>

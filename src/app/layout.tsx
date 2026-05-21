@@ -4,6 +4,7 @@ import "./globals.css";
 import CursorGradient from "../components/ui/CursorGradient";
 import SmoothScroll from "../components/ui/SmoothScroll";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

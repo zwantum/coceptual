@@ -14,7 +14,7 @@
 
 //   return (
 //     <div className="trust-bar w-full">
-//       <div className="max-w-[1180px] mx-auto px-4 md:px-8">
+//       <div className="max-w-[1180px] mx-auto px-6 md:px-8">
 //         <div className="trust-inner flex items-center justify-center gap-6 md:gap-9 flex-wrap w-full">
 //           {trustItems.map((item, index) => (
 //             <div 

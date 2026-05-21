@@ -17,7 +17,7 @@ export default function Process() {
         <div className="orb orb-p" style={{ width: '320px', height: '320px', top: '-80px', left: '-80px', opacity: 0.16, animationDelay: '-1s' }}></div>
         <div className="orb orb-m" style={{ width: '260px', height: '260px', bottom: '-60px', right: '-40px', opacity: 0.16, animationDelay: '-7s' }}></div>
       </OrbField>
-      <div className="container mx-auto px-4 md:px-8 max-w-[1180px]" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="container mx-auto px-6 md:px-8 max-w-[1180px]" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-head text-center mb-10 md:mb-[60px]">
           <SectionDots pOrder={1} mOrder={2} oOrder={3} />
           <div className="section-label mt-2">How We Work</div>

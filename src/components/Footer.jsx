@@ -1,22 +1,22 @@
 "use client";
 import BrandDots from "./ui/BrandDots";
+import ConceptualLogo from "../assets/CoceptualStudioLogo.webp"
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer relative pt-14 bg-[var(--glass-bg)] backdrop-blur-md border-t border-[var(--glass-border)]">
-      <div className="container mx-auto px-4 md:px-8 max-w-[1180px]">
+      <div className="container mx-auto px-6 md:px-8 max-w-[1180px]">
         <div className="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10 mb-10">
           
           {/* Brand Column */}
           <div className="footer-brand">
-            <a href="#" className="logo flex items-center gap-2.5">
-              <BrandDots dotSize="11px" />
-              <span className="logo-text text-[1.12rem] font-extrabold text-[var(--text-dark)]">
-                Coceptual <span className="text-[var(--orange)]">Studio</span>
-              </span>
-            </a>
+            <a href="#" className="logo shrink-0">
+                       {/* <BrandDots dotSize="13px" /> */}
+                       <span className="logo-text"><Image src={ConceptualLogo} alt="logo" style={{ width: "140px", height: "auto", paddingLeft: "15px" }} /></span>
+                     </a>
             <p className="text-[0.86rem] text-[var(--text-muted)] mt-4 leading-relaxed max-w-[260px]">
               Premier interior designers in Ranchi. Transforming homes and offices across Jharkhand since 2016.
             </p>

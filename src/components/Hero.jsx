@@ -9,9 +9,9 @@ export default function Hero() {
         <div className="orb orb-o w-[200px] h-[200px] md:w-[300px] md:h-[300px] top-[20%] right-[-40px] md:right-[-60px]" style={{ animationDelay: '-4s' }}></div>
         <div className="orb orb-p hidden md:block w-[360px] h-[360px] bottom-[-100px] left-[35%]" style={{ animationDelay: '-8s' }}></div>
       </OrbField>
-      <div className="container mx-auto px-4 md:px-8 w-full max-w-[1180px]" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="container mx-auto px-6 md:px-8 w-full max-w-[1180px]" style={{ position: 'relative', zIndex: 1 }}>
         <div className="hero-grid grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center relative z-10">
-          <div className="text-center lg:text-left pt-10 lg:pt-0">
+          <div className="b-section text-center lg:text-left pt-10 lg:pt-0">
             <div className="hero-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 border border-white/90 backdrop-blur-md text-xs md:text-sm text-[var(--orange)] font-semibold mb-5 shadow-sm">Now serving Ranchi, Jamshedpur & Bokaro</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">Interior Designers<br /><span className="gradient-text">in Ranchi</span><br />You Can Trust</h1>
             <p className="hero-sub text-base md:text-[1.08rem] text-[var(--text-muted)] mb-8 max-w-lg mx-auto lg:mx-0">Coceptual Studio transforms homes and offices across Jharkhand — modular kitchens, wardrobe design, full-home interiors, and turnkey execution. One studio. Complete solution.</p>
@@ -25,7 +25,8 @@ export default function Hero() {
               <div className="stat pl-4 border-l-[3px] border-[var(--orange)] text-left"><div className="stat-num text-2xl md:text-[1.9rem] font-extrabold text-[var(--text-dark)] leading-none">4.9★</div><div className="stat-label text-xs md:text-sm text-[var(--text-muted)] mt-1">Google rating</div></div>
             </div>
           </div>
-          <div className="hero-right relative flex flex-col gap-4">
+          
+          <div className="hero-right hidden lg:flex relative flex-col gap-4">
             <div className="glass-card hero-main-card p-6 md:p-8 w-auto h-auto">
               <BrandDots dotSize="10px" style={{ marginBottom: '14px' }} />
               <div className="hero-img-box h-[220px] md:h-[280px] rounded-xl flex flex-col items-center justify-center gap-2 border-[1.5px] border-dashed border-[rgba(123,63,228,0.2)] bg-gradient-to-br from-[rgba(224,32,176,0.1)] via-[rgba(255,106,0,0.08)] to-[rgba(123,63,228,0.1)]">

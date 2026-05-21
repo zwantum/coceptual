@@ -9,7 +9,7 @@ export default function WhyUs() {
     <>
     {/* <CTACard/> */}
     <section id="why" className="py-16 lg:py-24 relative">
-      <div className="container-call container mx-auto px-4 md:px-8 max-w-[1180px] -mt-12 relative z-20">
+      <div className="container-call container mx-auto px-6 md:px-8 max-w-[1180px] -mt-12 relative z-20">
             <div className="glass-card cta-strip p-6 md:p-10 lg:p-[56px_52px] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 text-center md:text-left">
               <div>
               <div className="flex justify-center md:justify-start mb-4"><BrandDots /></div>
@@ -36,7 +36,7 @@ export default function WhyUs() {
         <div className="orb orb-m" style={{ width: '300px', height: '300px', bottom: '-80px', right: '-60px', opacity: 0.15, animationDelay: '-3s' }}></div>
         <div className="orb orb-o" style={{ width: '240px', height: '240px', top: '-60px', left: '20%', opacity: 0.12, animationDelay: '-9s' }}></div>
       </OrbField>
-      <div className="container mx-auto px-4 md:px-8 max-w-[1180px] mt-16 md:mt-24" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="container mx-auto px-6 md:px-8 max-w-[1180px] mt-16 md:mt-24" style={{ position: 'relative', zIndex: 1 }}>
         <div className="why-grid grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <ScrollReveal type="slide-right">
             <div>

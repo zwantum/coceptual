@@ -8,11 +8,17 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-[1000] w-full transform-gpu bg-white/40 backdrop-blur-xl border-b border-white/40 shadow-sm">
-        <div className="nav-inner flex justify-between items-center w-full px-4 md:px-8">
+      <nav 
+        className="top-nav"
+        style={{
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)"
+        }}
+      >
+        <div className="nav-inner flex justify-between items-center w-full px-6 md:px-8">
           <a href="#" className="logo shrink-0">
             {/* <BrandDots dotSize="13px" /> */}
-            <span className="logo-text"><Image src={ConceptualLogo} alt="logo" style={{ width: "8.2rem", height: "100%",paddingLeft:"15px" }} /></span>
+            <span className="logo-text"><Image src={ConceptualLogo} alt="logo" style={{ width: "140px", height: "auto", paddingLeft: "15px" }} /></span>
           </a>
           <ul className="nav-links hidden lg:flex items-center gap-7">
             <li><a href="#services" className="relative transition-colors duration-300 hover:text-[var(--orange)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-[var(--orange)] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Services</a></li>
@@ -34,29 +40,29 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${isOpen ? 'open flex' : 'hidden'} fixed top-[68px] left-0 right-0 bottom-0 z-[999] overflow-y-auto bg-white/80 backdrop-blur-2xl border-t border-white/50 flex-col p-0`} id="mobileMenu">
-        <div className="mobile-menu-inner flex-1 flex flex-col p-5 gap-2">
-          <a href="#services" onClick={() => setIsOpen(false)} className="mobile-nav-item flex items-center gap-3.5 p-4 rounded-xl bg-white/50 border border-white/60 shadow-sm transition-all hover:bg-white/80">
-            <div className="mni-dot bg-[rgba(224,32,176,0.1)] text-[var(--magenta)] w-9 h-9 rounded-lg flex items-center justify-center shrink-0">✨</div>
+      <div className={`mobile-menu fixed top-[96px] left-4 right-4 z-[999] flex flex-col p-4 bg-white/98 backdrop-blur-2xl border border-white/50 shadow-2xl rounded-[24px] transition-all duration-300 origin-top ${isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`} id="mobileMenu">
+        <div className="mobile-menu-inner">
+          <a href="#services" onClick={() => setIsOpen(false)} className="mobile-nav-item flex items-center gap-3.5 p-4 justify-between">
             <div className="mni-text text-[var(--text-dark)]"><strong className="block text-base font-bold leading-tight">Services</strong><span className="block text-xs text-[var(--text-muted)] mt-0.5">What we offer</span></div>
+            <span className="mm-link-arrow">→</span>
           </a>
-          <a href="#process" onClick={() => setIsOpen(false)} className="mobile-nav-item flex items-center gap-3.5 p-4 rounded-xl bg-white/50 border border-white/60 shadow-sm transition-all hover:bg-white/80">
-            <div className="mni-dot bg-[rgba(255,106,0,0.1)] text-[var(--orange)] w-9 h-9 rounded-lg flex items-center justify-center shrink-0">📋</div>
+          <a href="#process" onClick={() => setIsOpen(false)} className="mobile-nav-item flex items-center gap-3.5 p-4 justify-between">
             <div className="mni-text text-[var(--text-dark)]"><strong className="block text-base font-bold leading-tight">Process</strong><span className="block text-xs text-[var(--text-muted)] mt-0.5">How we work</span></div>
+            <span className="mm-link-arrow">→</span>
           </a>
-          <a href="#projects" onClick={() => setIsOpen(false)} className="mobile-nav-item flex items-center gap-3.5 p-4 rounded-xl bg-white/50 border border-white/60 shadow-sm transition-all hover:bg-white/80">
-            <div className="mni-dot bg-[rgba(123,63,228,0.1)] text-[var(--purple)] w-9 h-9 rounded-lg flex items-center justify-center shrink-0">🏠</div>
+          <a href="#projects" onClick={() => setIsOpen(false)} className="mobile-nav-item flex items-center gap-3.5 p-4 justify-between">
             <div className="mni-text text-[var(--text-dark)]"><strong className="block text-base font-bold leading-tight">Portfolio</strong><span className="block text-xs text-[var(--text-muted)] mt-0.5">Our past work</span></div>
+            <span className="mm-link-arrow">→</span>
           </a>
-          <a href="#cities" onClick={() => setIsOpen(false)} className="mobile-nav-item flex items-center gap-3.5 p-4 rounded-xl bg-white/50 border border-white/60 shadow-sm transition-all hover:bg-white/80">
-            <div className="mni-dot bg-[rgba(37,211,102,0.1)] text-[#25D366] w-9 h-9 rounded-lg flex items-center justify-center shrink-0">📍</div>
+          <a href="#cities" onClick={() => setIsOpen(false)} className="mobile-nav-item flex items-center gap-3.5 p-4 justify-between">
             <div className="mni-text text-[var(--text-dark)]"><strong className="block text-base font-bold leading-tight">Coverage</strong><span className="block text-xs text-[var(--text-muted)] mt-0.5">Cities we serve</span></div>
+            <span className="mm-link-arrow">→</span>
           </a>
-        </div>
-        <div className="mobile-menu-footer p-5 border-t border-black/5 bg-white/40">
-          <div className="mobile-menu-cta flex gap-2.5 mb-4">
-            <a href="#contact" onClick={() => setIsOpen(false)} className="btn btn-outline flex-1 justify-center text-sm py-3 px-0 text-center">Get Quote</a>
-            <a href="https://wa.me/91XXXXXXXXXX" className="btn btn-wa flex-1 justify-center text-sm py-3 px-0 text-center">📞 WhatsApp</a>
+          <div className="mobile-menu-footer">
+            <div className="mobile-menu-cta">
+              <a href="#contact" onClick={() => setIsOpen(false)} className="btn btn-outline">Get Quote</a>
+              <a href="https://wa.me/91XXXXXXXXXX" className="btn btn-wa" target="_blank">📞 WhatsApp</a>
+            </div>
           </div>
         </div>
       </div>
