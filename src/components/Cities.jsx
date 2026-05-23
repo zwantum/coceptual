@@ -3,18 +3,19 @@ import BrandDots from "./ui/BrandDots";
 import SectionDots from "./ui/SectionDots";
 import OrbField from "./ui/OrbField";
 import ScrollReveal from "./ui/ScrollReveal";
+import ImageSlider from "./ImageSlider";
 
 export default function Cities() {
   return (
     <section id="cities" className="">
       {/* Exact Orb Field from HTML */}
       <OrbField>
-        <div 
-          className="orb orb-m" 
+        <div
+          className="orb orb-m"
           style={{ width: '280px', height: '280px', top: '-70px', right: '10%', opacity: 0.15, animationDelay: '-5s' }}
         ></div>
-        <div 
-          className="orb orb-p" 
+        <div
+          className="orb orb-p"
           style={{ width: '240px', height: '240px', bottom: '-50px', left: '-50px', opacity: 0.15, animationDelay: '-11s' }}
         ></div>
       </OrbField>
@@ -33,9 +34,9 @@ export default function Cities() {
             <div className="glass-card city-card h-full flex flex-col items-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_16px_32px_rgba(0,0,0,0.06)] cursor-default" style={{ width: 'auto' }}>
               <span className="city-primary-badge">Primary</span>
               <div className="city-icon">🏙️</div>
-              <BrandDots 
-                dotSize="8px" 
-                style={{ justifyContent: 'center', marginBottom: '10px' }} 
+              <BrandDots
+                dotSize="8px"
+                style={{ justifyContent: 'center', marginBottom: '10px' }}
               />
               <h4 className="font-bold text-[1.1rem]">Ranchi</h4>
               <p className="mt-2 flex-1">Our home base. Full team, fastest turnaround, all 8 services available.</p>
@@ -46,10 +47,10 @@ export default function Cities() {
           <ScrollReveal delay={0.15} type="fade-up">
             <div className="glass-card city-card h-full flex flex-col items-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_16px_32px_rgba(0,0,0,0.06)] cursor-default" style={{ width: 'auto' }}>
               <div className="city-icon">🏗️</div>
-              <BrandDots 
-                dotSize="8px" 
-                style={{ justifyContent: 'center', marginBottom: '10px' }} 
-                oOrder={1} pOrder={2} mOrder={3} 
+              <BrandDots
+                dotSize="8px"
+                style={{ justifyContent: 'center', marginBottom: '10px' }}
+                oOrder={1} pOrder={2} mOrder={3}
               />
               <h4 className="font-bold text-[1.1rem]">Jamshedpur</h4>
               <p className="mt-2 flex-1">Active project team. Home interiors, modular kitchens &amp; commercial work.</p>
@@ -60,10 +61,10 @@ export default function Cities() {
           <ScrollReveal delay={0.3} type="fade-up">
             <div className="glass-card city-card h-full flex flex-col items-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_16px_32px_rgba(0,0,0,0.06)] cursor-default" style={{ width: 'auto' }}>
               <div className="city-icon">🏠</div>
-              <BrandDots 
-                dotSize="8px" 
-                style={{ justifyContent: 'center', marginBottom: '10px' }} 
-                pOrder={1} mOrder={2} oOrder={3} 
+              <BrandDots
+                dotSize="8px"
+                style={{ justifyContent: 'center', marginBottom: '10px' }}
+                pOrder={1} mOrder={2} oOrder={3}
               />
               <h4 className="font-bold text-[1.1rem]">Bokaro</h4>
               <p className="mt-2 flex-1">Residential and commercial interior design across Bokaro Steel City.</p>
@@ -74,17 +75,19 @@ export default function Cities() {
           <ScrollReveal delay={0.45} type="fade-up">
             <div className="glass-card city-card h-full flex flex-col items-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_16px_32px_rgba(0,0,0,0.06)] cursor-default" style={{ width: 'auto' }}>
               <div className="city-icon">🌿</div>
-              <BrandDots 
-                dotSize="8px" 
-                style={{ justifyContent: 'center', marginBottom: '10px' }} 
-                mOrder={1} pOrder={2} oOrder={3} 
+              <BrandDots
+                dotSize="8px"
+                style={{ justifyContent: 'center', marginBottom: '10px' }}
+                mOrder={1} pOrder={2} oOrder={3}
               />
               <h4 className="font-bold text-[1.1rem]">Gumla</h4>
               <p className="mt-2 flex-1">Selected home interior and modular kitchen projects on request.</p>
             </div>
           </ScrollReveal>
         </div>
+        <ImageSlider />
       </div>
+
     </section>
   );
 }

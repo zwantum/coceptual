@@ -3,12 +3,58 @@ import ServiceCard from "./ServiceCard";
 import SectionDots from "./ui/SectionDots";
 import ScrollReveal from "./ui/ScrollReveal";
 
+// Import real services photos
+import ServiceImg1 from "../assets/Services/Services_1_HomeInterior.webp";
+import ServiceImg2 from "../assets/Services/Services_2_ModularKitchen.webp";
+import ServiceImg3 from "../assets/Services/Services_3_Wardrobe&Storages.webp";
+import ServiceImg4 from "../assets/Services/Services_4_Bedroom&LivingRoom.webp";
+import ServiceImg5 from "../assets/Services/Services_5_Office&Commercial.webp";
+import ServiceImg6 from "../assets/Services/Services_6_CustomFurniture.webp";
+import ServiceImg7 from "../assets/Services/Services_7_TurnkeyExecutive.webp";
+import ServiceImg8 from "../assets/Services/Services_8_Balcony&HomeTheatre.webp";
+
 export default function Services() {
   const servicesData = [
-    { title: "Home Interiors", icon: "🏠", desc: "Complete 2BHK, 3BHK and villa interior design in Ranchi. Living room, bedroom, kitchen, bathrooms — fully conceptualised and executed." },
-    { title: "Modular Kitchens", icon: "🍳", desc: "L-shaped, U-shaped, parallel and island modular kitchens in Ranchi. Premium laminate, acrylic & membrane finishes." },
-    { title: "Wardrobes & Storage", icon: "📄", desc: "Sliding wardrobes, hinged wardrobes, walk-in closets and built-in storage solutions — designed to fit your exact dimensions." },
-    { title: "Turnkey Execution", icon: "🔑", desc: "End-to-end interior work from design to handover. We manage every vendor, contractor and timeline — stress-free." }
+    {
+      title: "Home Interiors",
+      image: ServiceImg1,
+      desc: "Complete 2BHK, 3BHK and villa interior design in Ranchi. Living room, bedroom, kitchen, bathrooms — fully conceptualised and executed by our in-house team."
+    },
+    {
+      title: "Modular Kitchens",
+      image: ServiceImg2,
+      desc: "L-shaped, U-shaped, parallel and island modular kitchens in Ranchi. Premium laminate, acrylic & membrane finishes with soft-close hardware. Transparent pricing."
+    },
+    {
+      title: "Wardrobes & Storage",
+      image: ServiceImg3,
+      desc: "Sliding wardrobes, hinged wardrobes, walk-in closets and built-in storage solutions — designed to fit your exact bedroom dimensions in Ranchi."
+    },
+    {
+      title: "Living Room & Bedroom",
+      image: ServiceImg4,
+      desc: "False ceiling designs, TV units, panel walls, accent lighting, modular storage and complete bedroom makeovers — your dream space, realised."
+    },
+    {
+      title: "Office & Commercial",
+      image: ServiceImg5,
+      desc: "Corporate offices, clinics, retail showrooms, restaurants and co-working spaces across Ranchi and Jharkhand. Functional, brand-aligned commercial design."
+    },
+    {
+      title: "Custom Furniture",
+      image: ServiceImg6,
+      desc: "Bespoke furniture manufactured in Ranchi to your exact measurements. Solid wood, plywood with veneer, MDF — crafted locally with a 5-year warranty."
+    },
+    {
+      title: "Turnkey Execution",
+      image: ServiceImg7,
+      desc: "End-to-end interior work from design to handover. We manage every vendor, contractor and timeline — single-point accountability for a stress-free project."
+    },
+    {
+      title: "Balcony & Home Theatre",
+      image: ServiceImg8,
+      desc: "Balcony makeovers, outdoor seating and premium home theatre setups with false ceiling, acoustic panels, projector & surround sound integration in Ranchi."
+    }
   ];
 
   return (
@@ -32,12 +78,12 @@ export default function Services() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-[22px]">
+          <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[22px]">
             {servicesData.map((svc, index) => (
-              <ServiceCard 
+              <ServiceCard
                 key={index}
                 title={svc.title}
-                icon={svc.icon}
+                image={svc.image}
                 desc={svc.desc}
               />
             ))}

@@ -5,10 +5,10 @@ import ScrollReveal from "./ui/ScrollReveal";
 
 export default function Process() {
   const steps = [
-    { n: "01", t: "Consultation", d: "Free site visit and design brief. We understand your vision, budget and timeline." },
-    { n: "02", t: "Design & Quote", d: "3D renders, material samples and a fully itemised fixed-price quote." },
-    { n: "03", t: "Execution", d: "Our in-house team handles civil, carpentry, electrical and finishing work." },
-    { n: "04", t: "Handover", d: "Snagging check, deep clean and handover — with a 5-year warranty." },
+    { n: "01", t: "Consultation", d: "Free site visit and design brief. We understand your vision, budget and timeline before anything is proposed." },
+    { n: "02", t: "Design & Quote", d: "3D renders, material samples and a fully itemised fixed-price quote - no hidden costs ever." },
+    { n: "03", t: "Execution", d: "Our in-house team handles civil, carpentry, electrical and finishing work entirely end-to-end." },
+    { n: "04", t: "Handover", d: "Snagging check, deep clean and handover — with a 5-year warranty certificate on all carpentry." },
   ];
 
   return (

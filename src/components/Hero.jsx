@@ -1,7 +1,38 @@
+"use client";
+import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import OrbField from "./ui/OrbField";
 import BrandDots from "./ui/BrandDots";
 
+// Import real hero image
+import HeroFrontSlide from "../assets/Top Banner/3BHK_FRONTSILDE.webp";
+
 export default function Hero() {
+  const x = useMotionValue(0.5);
+  const y = useMotionValue(0.5);
+
+  // Smooth springs for tilt rotation
+  const rotateX = useSpring(useTransform(y, [0, 1], [15, -15]), { stiffness: 220, damping: 22 });
+  const rotateY = useSpring(useTransform(x, [0, 1], [-15, 15]), { stiffness: 220, damping: 22 });
+
+  // Glare position transform
+  const glareX = useTransform(x, [0, 1], ["0%", "100%"]);
+  const glareY = useTransform(y, [0, 1], ["0%", "100%"]);
+
+  const handleMouseMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+    
+    x.set(mouseX / width);
+    y.set(mouseY / height);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0.5);
+    y.set(0.5);
+  };
   return (
     <section className="hero relative min-h-screen flex items-center pt-[68px] overflow-hidden" id="home">
       <OrbField>
@@ -19,32 +50,62 @@ export default function Hero() {
               <a href="#contact" className="btn btn-primary text-center justify-center">Get Free Design Consultation</a>
               <a href="#projects" className="btn btn-outline text-center justify-center">View Our Work</a>
             </div>
-            <div className="hero-stats flex flex-wrap gap-6 sm:gap-8 justify-center lg:justify-start">
-              <div className="stat pl-4 border-l-[3px] border-[var(--orange)] text-left"><div className="stat-num text-2xl md:text-[1.9rem] font-extrabold text-[var(--text-dark)] leading-none">200+</div><div className="stat-label text-xs md:text-sm text-[var(--text-muted)] mt-1">Projects delivered</div></div>
-              <div className="stat pl-4 border-l-[3px] border-[var(--orange)] text-left"><div className="stat-num text-2xl md:text-[1.9rem] font-extrabold text-[var(--text-dark)] leading-none">8+</div><div className="stat-label text-xs md:text-sm text-[var(--text-muted)] mt-1">Years in Ranchi</div></div>
-              <div className="stat pl-4 border-l-[3px] border-[var(--orange)] text-left"><div className="stat-num text-2xl md:text-[1.9rem] font-extrabold text-[var(--text-dark)] leading-none">4.9★</div><div className="stat-label text-xs md:text-sm text-[var(--text-muted)] mt-1">Google rating</div></div>
+            <div className="hero-stats">
+              <div className="stat text-left">
+                <div className="stat-num">200+</div>
+                <div className="stat-label">Projects delivered</div>
+              </div>
+              <div className="stat text-left">
+                <div className="stat-num">8+</div>
+                <div className="stat-label">Years in Ranchi</div>
+              </div>
+              <div className="stat text-left">
+                <div className="stat-num">4.9★</div>
+                <div className="stat-label">Google rating</div>
+              </div>
             </div>
           </div>
-          
-          <div className="hero-right hidden lg:flex relative flex-col gap-4">
-            <div className="glass-card hero-main-card p-6 md:p-8 w-auto h-auto">
-              <BrandDots dotSize="10px" style={{ marginBottom: '14px' }} />
-              <div className="hero-img-box h-[220px] md:h-[280px] rounded-xl flex flex-col items-center justify-center gap-2 border-[1.5px] border-dashed border-[rgba(123,63,228,0.2)] bg-gradient-to-br from-[rgba(224,32,176,0.1)] via-[rgba(255,106,0,0.08)] to-[rgba(123,63,228,0.1)]">
-                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="18" width="44" height="30" rx="4" stroke="rgba(123,63,228,0.35)" strokeWidth="2"/><path d="M18 18V14a4 4 0 014-4h12a4 4 0 014 4v4" stroke="rgba(255,106,0,0.35)" strokeWidth="2"/><circle cx="28" cy="33" r="6" stroke="rgba(224,32,176,0.35)" strokeWidth="2"/></svg>
-                <p className="text-[0.75rem] text-[var(--text-muted)] tracking-widest uppercase font-semibold">Add your project photos here</p>
+
+          <div className="hero-right flex relative flex-col gap-4 mt-8 lg:mt-0">
+            <motion.div 
+              className="glass-card hero-main-card p-4 sm:p-6 md:p-8 w-auto h-auto cursor-pointer group relative"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{ 
+                rotateX, 
+                rotateY, 
+                transformStyle: "preserve-3d",
+                perspective: 1000
+              }}
+            >
+              <BrandDots dotSize="8px" style={{ marginBottom: '12px' }} />
+              <div className="hero-img-box h-[170px] sm:h-[220px] md:h-[280px] rounded-xl overflow-hidden relative">
+                <img 
+                  src={HeroFrontSlide.src} 
+                  alt="3BHK Turnkey project at Harmu Housing Colony, Ranchi" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 select-none pointer-events-none"
+                />
               </div>
-              <p className="text-xs md:text-[0.8rem] text-[var(--text-muted)] mt-3 text-center">3BHK Turnkey — Harmu Housing Colony, Ranchi</p>
-            </div>
+              <p className="text-[10px] sm:text-xs md:text-[0.8rem] text-[var(--text-muted)] mt-3 text-center">3BHK Turnkey — Harmu Housing Colony, Ranchi</p>
+              
+              {/* Glare/Shine Effect */}
+              <motion.div 
+                className="absolute inset-0 pointer-events-none z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: `radial-gradient(circle 240px at ${glareX} ${glareY}, rgba(255,255,255,0.22), transparent)`
+                }}
+              />
+            </motion.div>
             <div className="hero-mini-cards grid grid-cols-2 gap-3">
-              <div className="glass-card hero-mini p-4 md:px-5 md:py-4 w-auto h-auto">
-                <BrandDots dotSize="7px" style={{ marginBottom: '8px' }} />
-                <small className="text-[0.7rem] md:text-[0.74rem] text-[var(--text-muted)] font-medium">Delivered on time</small>
-                <strong className="block text-[0.85rem] md:text-[0.95rem] text-[var(--text-dark)] font-bold mt-0.5">98% projects</strong>
+              <div className="glass-card hero-mini p-3 sm:p-4 md:px-5 md:py-4 w-auto h-auto">
+                <BrandDots dotSize="6px" style={{ marginBottom: '6px' }} />
+                <small className="text-[0.6rem] sm:text-[0.7rem] md:text-[0.74rem] text-[var(--text-muted)] font-medium">Delivered on time</small>
+                <strong className="block text-[0.75rem] sm:text-[0.85rem] md:text-[0.95rem] text-[var(--text-dark)] font-bold mt-0.5">98% projects</strong>
               </div>
-              <div className="glass-card hero-mini p-4 md:px-5 md:py-4 w-auto h-auto">
-                <BrandDots dotSize="7px" style={{ marginBottom: '8px' }} pOrder={1} oOrder={2} mOrder={3} />
-                <small className="text-[0.7rem] md:text-[0.74rem] text-[var(--text-muted)] font-medium">Post-handover</small>
-                <strong className="block text-[0.85rem] md:text-[0.95rem] text-[var(--text-dark)] font-bold mt-0.5">5-yr warranty</strong>
+              <div className="glass-card hero-mini p-3 sm:p-4 md:px-5 md:py-4 w-auto h-auto">
+                <BrandDots dotSize="6px" style={{ marginBottom: '6px' }} pOrder={1} oOrder={2} mOrder={3} />
+                <small className="text-[0.6rem] sm:text-[0.7rem] md:text-[0.74rem] text-[var(--text-muted)] font-medium">Post-handover</small>
+                <strong className="block text-[0.75rem] sm:text-[0.85rem] md:text-[0.95rem] text-[var(--text-dark)] font-bold mt-0.5">5-yr warranty</strong>
               </div>
             </div>
           </div>

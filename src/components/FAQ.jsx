@@ -41,11 +41,11 @@ export default function FAQ() {
 
         <div className="faq-list max-w-[760px] mx-auto flex flex-col gap-[10px]">
           {faqs.map((faq, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className={`faq-item glass-card transition-transform duration-200 ${openIndex === i ? 'open' : ''}`}
             >
-              <button 
+              <button
                 onClick={() => toggleFAQ(i)}
                 className="faq-q w-full bg-none border-none text-[var(--text-dark)] text-[0.94rem] font-bold text-left p-[20px_24px] cursor-pointer flex justify-between items-center gap-3 font-inherit hover:text-[var(--orange)]"
               >
@@ -54,8 +54,8 @@ export default function FAQ() {
                   {openIndex === i ? '×' : '+'}
                 </i>
               </button>
-              
-              <div 
+
+              <div
                 className="faq-a overflow-hidden transition-[max-height] duration-500 ease-in-out"
                 style={{ maxHeight: openIndex === i ? '300px' : '0' }}
               >
@@ -67,13 +67,13 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="text-center pt-10" style={{ marginTop: "30px" }}>
+        <div className="text-center pt-10" style={{ marginTop: "30px", marginBottom: "30px" }}>
           <p className="text-[0.88rem] text-[var(--text-muted)] mb-4">Still have questions?</p>
           <a href="https://wa.me/91XXXXXXXXXX" className="btn btn-wa inline-flex items-center gap-2">
-            💬 Ask us on WhatsApp
+            <i className="fab fa-whatsapp" style={{ fontSize: "20px" }}></i> Ask us on WhatsApp
           </a>
         </div>
       </div>
-    </section>
+    </section >
   );
 }

@@ -1,0 +1,38 @@
+.admin-nav {
+    height: max-content;
+    margin-top: 10px;
+    border-radius: 5px;
+    /* background-color: red; */
+    min-width: 100%;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+main {
+    min-width: 100vw;
+    padding: 2rem;
+}
+
+.progress-box {
+    padding: 2rem;
+
+}
+
+.p-bar-txt {
+    padding: .5rem 1rem .5rem 1rem;
+}
+
+.main-process-box {
+    margin-bottom: 2rem;
+}
+
+button {
+    padding: .4rem .5rem .4rem .5rem;
+}
+
+/* select {
+    padding: .5rem 1rem .5rem 1rem;
+} */
+
+input {
+    padding: .4rem .5rem .4rem 3rem;
+}
