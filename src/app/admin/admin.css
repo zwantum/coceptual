@@ -36,3 +36,12 @@ button {
 input {
     padding: .4rem .5rem .4rem 3rem;
 }
+
+.text-3xl {
+    color: white !important;
+
+}
+
+.login-btn {
+    background-color: white;
+}

@@ -3,6 +3,7 @@
 import { createClient } from '@/lib/supabase/client'
 import { useSearchParams } from 'next/navigation'
 import { useState, Suspense } from 'react'
+import "../admin.css"
 
 function LoginContent() {
   const searchParams = useSearchParams()
@@ -55,7 +56,7 @@ function LoginContent() {
         <button
           onClick={handleLogin}
           disabled={loading}
-          className="w-full py-3.5 px-4 bg-white hover:bg-neutral-100 text-black font-extrabold rounded-xl transition duration-155 flex items-center justify-center gap-3 active:scale-[0.98] shadow-lg disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer"
+          className="login-btn w-full py-3.5 px-4 hover:bg-neutral-100 text-black font-extrabold rounded-xl transition duration-155 flex items-center justify-center gap-3 active:scale-[0.98] shadow-lg disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer"
         >
           {loading ? (
             <span className="text-sm font-bold text-neutral-600">Connecting...</span>

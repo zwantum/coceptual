@@ -444,7 +444,8 @@ export default function AdminDashboard() {
           >
             <div className="space-y-7">
               {/* Drawer header */}
-              <div className="flex justify-between items-start border-b border-neutral-900 pb-5">
+              <div className="mt-10 flex justify-between items-start border-b border-neutral-900 pb-5">
+
                 <div className="flex items-center gap-4">
                   {/* Dynamic gradient avatar */}
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-orange-500 to-purple-600 flex items-center justify-center text-white font-black text-sm tracking-wide shadow-md">
