@@ -12,7 +12,10 @@
   --border: rgba(255, 255, 255, 0.45);
   --grad: linear-gradient(135deg, var(--magenta), var(--orange), var(--purple));
   --grad-soft: linear-gradient(135deg, rgba(224, 32, 176, 0.12), rgba(255, 106, 0, 0.08), rgba(123, 63, 228, 0.12));
+  --black-brand: #1c1c1c;
 
+  /* new button color */
+  --vilot-brand: #7d28ff;
   /* Responsive Navbar properties */
   --nav-height: 3.25rem;
   /* 52px on mobile */
@@ -122,11 +125,14 @@ h3 {
 }
 
 .gradient-text {
-  background: var(--grad);
+  /* background: var(--grad); */
+  background: var(--black-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+
 
 .section-label {
   font-size: 0.76rem;
@@ -301,7 +307,8 @@ section {
 }
 
 .btn-primary {
-  background: var(--grad);
+  /* background: var(--grad); */
+  background: var(--vilot-brand);
   color: #fff;
   box-shadow: 0 4px 20px rgba(255, 106, 0, 0.25);
 }
@@ -908,7 +915,8 @@ section {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: var(--grad);
+  background: var(--black-brand);
+  /* background: black; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -916,7 +924,10 @@ section {
   color: white;
   font-size: 0.88rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(255, 106, 0, 0.3);
+  /* box-shadow: 0 4px 14px rgba(255, 106, 0, 0.3); */
+  box-shadow: 0 4px 14px rgba(57, 57, 57, 0.3);
+
+
 }
 
 .why-item h4 {
@@ -946,7 +957,7 @@ section {
 .rating-big {
   font-size: 2.4rem;
   font-weight: 800;
-  background: var(--grad);
+  background: var(--black-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1026,7 +1037,8 @@ section {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--grad);
+  background: var(--black-brand);
+  /* background-color: black; */
   color: #fff;
   display: flex;
   align-items: center;
@@ -1034,7 +1046,9 @@ section {
   font-size: 1.2rem;
   font-weight: 800;
   margin: 0 auto 18px;
-  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.3);
+  /* box-shadow: 0 6px 20px rgba(255, 106, 0, 0.3); */
+  box-shadow: 0 6px 20px rgba(70, 69, 68, 0.3);
+
 }
 
 .process-card h4 {
@@ -1126,7 +1140,8 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  background: var(--grad);
+  background: var(--black-brand);
+  /* background: black; */
   color: white;
   padding: 3px 9px;
   border-radius: 20px;
@@ -1284,10 +1299,13 @@ section {
   cursor: pointer;
   border: none;
   border-radius: 12px;
-  background: var(--grad);
+  background: var(--vilot-brand);
+  /* background: black; */
   color: #fff;
   transition: opacity 0.25s, transform 0.25s;
-  box-shadow: 0 6px 24px rgba(255, 106, 0, 0.3);
+  /* box-shadow: 0 6px 24px rgba(255, 106, 0, 0.3); */
+  box-shadow: 0 6px 24px rgba(47, 46, 46, 0.3);
+
 }
 
 .form-submit:hover {
@@ -1335,13 +1353,15 @@ section {
   justify-content: space-between;
   gap: 32px;
   flex-wrap: wrap;
-  background: var(--grad);
+  background: var(--black-brand);
+  /* background: black; */
   border-radius: 28px;
   position: relative;
   z-index: 1;
   overflow: hidden;
   margin-top: 1rem;
 }
+
 
 .cta2-inner::before {
   content: '';
@@ -1351,7 +1371,7 @@ section {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(0, 0, 0, 0.07);
 }
 
 .cta2-inner::after {
@@ -1362,7 +1382,7 @@ section {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .cta2-inner h2 {
@@ -1403,6 +1423,7 @@ section {
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
   border: 1.5px solid rgba(255, 255, 255, 0.4);
+
 }
 
 .btn-ghost:hover {

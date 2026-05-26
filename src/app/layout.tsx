@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import CursorGradient from "../components/ui/CursorGradient";
+// import CursorGradient from "../components/ui/CursorGradient";
 import SmoothScroll from "../components/ui/SmoothScroll";
 
 
@@ -36,7 +36,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col layout-bg">
         <SmoothScroll>
-          <CursorGradient />
+          {/* <CursorGradient /> */}
           {children}
         </SmoothScroll>
       </body>
