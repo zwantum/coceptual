@@ -13,6 +13,7 @@
   --grad: linear-gradient(135deg, var(--magenta), var(--orange), var(--purple));
   --grad-soft: linear-gradient(135deg, rgba(224, 32, 176, 0.12), rgba(255, 106, 0, 0.08), rgba(123, 63, 228, 0.12));
   --black-brand: #1c1c1c;
+  --brand-gray: #3d3d3d;
 
   /* new button color */
   --vilot-brand: #7d28ff;
@@ -915,8 +916,8 @@ section {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: var(--black-brand);
-  /* background: black; */
+  /* background: var(--black-brand); */
+  background: var(--brand-gray);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -924,11 +925,12 @@ section {
   color: white;
   font-size: 0.88rem;
   flex-shrink: 0;
-  /* box-shadow: 0 4px 14px rgba(255, 106, 0, 0.3); */
-  box-shadow: 0 4px 14px rgba(57, 57, 57, 0.3);
+
+
 
 
 }
+
 
 .why-item h4 {
   color: var(--text-dark);
@@ -1037,7 +1039,7 @@ section {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--black-brand);
+  background: var(--brand-gray);
   /* background-color: black; */
   color: #fff;
   display: flex;
@@ -1140,7 +1142,7 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  background: var(--black-brand);
+  background: var(--brand-gray);
   /* background: black; */
   color: white;
   padding: 3px 9px;
@@ -1353,7 +1355,7 @@ section {
   justify-content: space-between;
   gap: 32px;
   flex-wrap: wrap;
-  background: var(--black-brand);
+  background: var(--brand-gray);
   /* background: black; */
   border-radius: 28px;
   position: relative;
