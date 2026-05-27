@@ -68,10 +68,10 @@ export default function Navbar() {
 
           <div className="mobile-menu-footer">
             <div className="mb-5">
-              <p className="text-xs text-[var(--text-muted)]">Address: Coceptual Studio, Your Studio Address, Ranchi, Jharkhand 834001 </p>
+              <p className="text-xs text-[var(--text-muted)]"><b>Address:</b> Coceptual Studio, Your Studio Address, Ranchi, Jharkhand 834001 </p>
             </div>
             <div className="mobile-menu-cta">
-              <a href="#contact" onClick={() => setIsOpen(false)} className="btn btn-outline">Get Quote</a>
+              <a href="#contact" onClick={() => setIsOpen(false)} className="nev-get-btn btn ">Get Quote</a>
               <a href="https://wa.me/91XXXXXXXXXX" className="btn btn-wa" target="_blank"><i className="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
           </div>

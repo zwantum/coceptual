@@ -25,6 +25,12 @@
   /* 72px on mobile */
 }
 
+.nev-get-btn {
+  background: var(--vilot-brand);
+  color: white;
+
+}
+
 @media (min-width: 768px) {
   :root {
     --nav-height: 3.625rem;
@@ -56,7 +62,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -64,7 +70,7 @@ body {
   background: var(--light);
   color: var(--text-dark);
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Premium Animated Global Background for Layout */
@@ -162,9 +168,10 @@ section {
   align-items: center;
 }
 
-.b-section {
+/* .b-section {
   margin-top: 2rem;
-}
+} */
+
 
 .section-head {
   text-align: center;
@@ -555,7 +562,8 @@ section {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.05); */
+
 
 }
 
@@ -587,7 +595,7 @@ section {
 .hero-grid {
   position: relative;
   z-index: 1;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   /* padding: 0 1rem 0 1rem; */
 }
 
@@ -811,6 +819,7 @@ section {
   cursor: pointer;
   width: 100%;
   overflow: hidden;
+
 }
 
 .service-card:hover {
@@ -1025,42 +1034,157 @@ section {
 }
 
 /* ── PROCESS ── */
+.process {}
 
 .process-step {
-  text-align: center;
-}
-
-.process-card {
-  padding: 32px 20px;
   height: 100%;
 }
 
-.pstep-num {
-  width: 56px;
-  height: 56px;
+.process-glass-card {
+  position: relative;
+  height: 340px;
+  padding: 35px 28px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  box-shadow:
+    0 12px 40px rgba(123, 63, 228, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+  transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-glass-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(125, 40, 255, 0.25);
+  box-shadow:
+    0 20px 48px rgba(125, 40, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.process-glass-card .bg-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 250px;
+
+  font-weight: 900;
+  color: rgba(126, 40, 255, 0.165);
+  filter: blur(2px);
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+  transition: 0.4s ease;
+  overflow: visible;
+}
+
+.process-glass-card:hover .bg-number {
+  color: rgba(126, 40, 255, 0.113);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.process-glass-card::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 106, 0, 0.05);
   border-radius: 50%;
-  background: var(--brand-gray);
-  /* background-color: black; */
-  color: #fff;
+  top: -70px;
+  right: -50px;
+  filter: blur(35px);
+  pointer-events: none;
+  transition: 0.4s ease;
+}
+
+.process-glass-card::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(224, 32, 176, 0.05);
+  border-radius: 50%;
+  bottom: -50px;
+  left: -40px;
+  filter: blur(30px);
+  pointer-events: none;
+  transition: 0.4s ease;
+}
+
+.process-glass-card:hover::before {
+  background: rgba(255, 106, 0, 0.08);
+}
+
+.process-glass-card:hover::after {
+  background: rgba(125, 40, 255, 0.08);
+}
+
+.process-glass-card .content {
+  position: relative;
+  z-index: 5;
+  height: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.process-glass-card .step {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(125, 40, 255, 0.06);
+  display: flex;
   justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin: 0 auto 18px;
-  /* box-shadow: 0 6px 20px rgba(255, 106, 0, 0.3); */
-  box-shadow: 0 6px 20px rgba(70, 69, 68, 0.3);
-
+  align-items: center;
+  color: var(--vilot-brand);
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid rgba(125, 40, 255, 0.15);
+  margin-bottom: 28px;
+  transition: 0.4s ease;
 }
 
-.process-card h4 {
+.process-glass-card:hover .step {
+  background: var(--vilot-brand);
+  color: #fff;
+  border-color: var(--vilot-brand);
+  box-shadow: 0 8px 20px rgba(125, 40, 255, 0.25);
+}
+
+.process-glass-card h2 {
   color: var(--text-dark);
-  margin-bottom: 8px;
+  font-size: 26px;
+  margin-bottom: 14px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.process-card p {
-  font-size: 0.84rem;
-  color: var(--text-muted);
+.process-glass-card p {
+  color: var(--text-mid);
+  line-height: 1.7;
+  font-size: 14.5px;
+}
+
+@media(max-width: 768px) {
+  .process-glass-card {
+    height: auto;
+    min-height: 300px;
+  }
+
+  .process-glass-card .bg-number {
+    font-size: 170px;
+  }
+
+  .process-glass-card h2 {
+    font-size: 22px;
+  }
 }
 
 /* ── PROJECTS ── */
@@ -1354,7 +1478,7 @@ section {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   background: var(--brand-gray);
   /* background: black; */
   border-radius: 28px;
@@ -1362,6 +1486,7 @@ section {
   z-index: 1;
   overflow: hidden;
   margin-top: 1rem;
+
 }
 
 
@@ -1403,11 +1528,18 @@ section {
 
 .cta2-btns {
   display: flex;
+  /* grid-template-columns: repeat(2, 1fr); */
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-shrink: 0;
   position: relative;
   z-index: 1;
+  /* background-color: #1313ff; */
+  min-width: 20rem;
+  align-items: start;
+  /* margin-left: -2.5rem; */
+  /* left: -50%; */
+  justify-content: start;
 }
 
 .btn-white {
@@ -1653,4 +1785,11 @@ footer {
 
 .cta-card-bg {
   background: url("https://images.unsplash.com/photo-1716703433576-13ff2922db95?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") !important;
+}
+
+
+@media (max-width: 768px) {
+  footer {
+    margin-left: -1rem;
+  }
 }

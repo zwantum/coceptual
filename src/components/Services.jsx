@@ -1,4 +1,6 @@
 "use client";
+import { useRef } from "react";
+import { useScroll } from "framer-motion";
 import ServiceCard from "./ServiceCard";
 import SectionDots from "./ui/SectionDots";
 import ScrollReveal from "./ui/ScrollReveal";
@@ -57,6 +59,12 @@ export default function Services() {
     }
   ];
 
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
   return (
     <section id="services" className="py-16 md:py-24 relative">
       {/* Background Orbs specifically for this section */}
@@ -65,9 +73,9 @@ export default function Services() {
         <div className="orb orb-o hidden md:block w-[280px] h-[280px] -bottom-[80px] -left-[60px] opacity-[0.18]" style={{ animationDelay: '-7s' }}></div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-8 max-w-[1180px] relative z-10">
+      <div className="container mx-auto px-6 md:px-8 max-w-[1180px] relative z-10 mb-10 md:mb-16">
         <ScrollReveal>
-          <div className="section-head text-center mb-10 md:mb-[60px]">
+          <div className="section-head text-center">
             <SectionDots />
             <div className="section-label mt-2">What We Do</div>
             <h2 className="font-bold mb-4">
@@ -76,19 +84,30 @@ export default function Services() {
             <p className="text-[0.95rem] md:text-base px-2">From concept to completion — residential, commercial, and everything in between.</p>
           </div>
         </ScrollReveal>
+      </div>
 
-        <ScrollReveal>
-          <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[22px]">
-            {servicesData.map((svc, index) => (
+      {/* Cards Container with wider bounds */}
+      <div className="w-full max-w-[1300px] mx-auto sm:px-6 md:px-8 relative z-10">
+        {/* Stacking Cards Container */}
+        <div ref={containerRef} className="relative w-full">
+          {servicesData.map((svc, index) => {
+            const targetScale = 1 - ((servicesData.length - index) * 0.025);
+            const range = [index * (1 / servicesData.length), 1];
+            return (
               <ServiceCard
                 key={index}
+                index={index}
                 title={svc.title}
                 image={svc.image}
                 desc={svc.desc}
+                progress={scrollYProgress}
+                range={range}
+                targetScale={targetScale}
+                total={servicesData.length}
               />
-            ))}
-          </div>
-        </ScrollReveal>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

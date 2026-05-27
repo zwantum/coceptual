@@ -38,7 +38,7 @@ export default function WhyUs() {
         </OrbField>
         <div className="container mx-auto px-6 md:px-8 max-w-[1180px] mt-16 md:mt-24" style={{ position: 'relative', zIndex: 1 }}>
           <div className="why-grid grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            <ScrollReveal type="slide-right">
+            <ScrollReveal type="slide-up">
               <div>
                 <SectionDots oOrder={1} pOrder={2} mOrder={3} />
                 <div className="section-label">Why Coceptual Studio</div>

@@ -66,11 +66,13 @@ export default function ContactForm() {
   };
 
   const features = [
-    { icon: "🎨", title: "Free 3D design concept", desc: "We'll prepare a basic 3D layout for your space at no charge." },
-    { icon: "📋", title: "Detailed cost breakdown", desc: "Itemised quote with material options across three budget levels." },
-    { icon: "📞", title: "Response within 24 hours", desc: "Our Ranchi team will call you within one business day." },
-    { icon: "🏗️", title: "Site visit included", desc: "We'll visit your space in Ranchi to understand it before quoting." },
+    { icon: <i className="fa-brands fa-unity" style={{ color: "rgb(28, 28, 28)" }}></i>, title: "Free 3D design concept", desc: "We'll prepare a basic 3D layout for your space at no charge." },
+    { icon: <i className="fa-solid fa-file-invoice-dollar" style={{ color: "rgb(28, 28, 28)" }}></i>, title: "Detailed cost breakdown", desc: "Itemised quote with material options across three budget levels." },
+    { icon: <i className="fa-solid fa-clock" style={{ color: "rgb(28, 28, 28)" }}></i>, title: "Response within 24 hours", desc: "Our Ranchi team will call you within one business day." },
+    { icon: <i className="fa-solid fa-map-marker-alt" style={{ color: "rgb(28, 28, 28)" }}></i>, title: "Site visit included", desc: "We'll visit your space in Ranchi to understand it before quoting." },
   ];
+
+
 
   return (
     <section id="contact" className="relative py-16 md:py-24">

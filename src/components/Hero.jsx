@@ -42,7 +42,7 @@ export default function Hero() {
       </OrbField>
       <div className="container mx-auto px-6 md:px-8 w-full max-w-[1180px]" style={{ position: 'relative', zIndex: 1 }}>
         <div className="hero-grid grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center relative z-10">
-          <div className="b-section text-center lg:text-left pt-10 lg:pt-0">
+          <div className="b-section text-center lg:text-left pt-10 lg:pt-0 order-2 lg:order-1">
             <div className="hero-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 border border-white/90 backdrop-blur-md text-xs md:text-sm text-[var(--orange)] font-semibold mb-5 shadow-sm">Now serving Ranchi, Jamshedpur & Bokaro</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">Interior Designers<br /><span className="gradient-text">in Ranchi</span><br />You Can Trust</h1>
             <p className="hero-sub text-base md:text-[1.08rem] text-[var(--text-muted)] mb-8 max-w-lg mx-auto lg:mx-0">Coceptual Studio transforms homes and offices across Jharkhand — modular kitchens, wardrobe design, full-home interiors, and turnkey execution. One studio. Complete solution.</p>
@@ -66,7 +66,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="hero-right flex relative flex-col gap-4 mt-8 lg:mt-0">
+          <div className="hero-right flex relative flex-col gap-4 mt-8 lg:mt-0 order-1 lg:order-2">
             <motion.div 
               className="glass-card hero-main-card p-4 sm:p-6 md:p-8 w-auto h-auto cursor-pointer group relative"
               onMouseMove={handleMouseMove}
