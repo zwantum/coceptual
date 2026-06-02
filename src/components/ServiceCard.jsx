@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import BrandDots from "./ui/BrandDots";
 
 export default function ServiceCard({ title, image, desc, progress, range, targetScale, index, total }) {
@@ -12,14 +12,21 @@ export default function ServiceCard({ title, image, desc, progress, range, targe
     offset: ["start end", "start start"]
   });
 
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
+  // Smooth the scroll progress to prevent jitter on mobile devices
+  const smoothProgress = useSpring(scrollYProgress, {
+    damping: 20,
+    stiffness: 150,
+    mass: 0.1
+  });
+
+  const imageScale = useTransform(smoothProgress, [0, 1], [1.2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
   const opacity = useTransform(progress, range, [1, 0.5]);
 
   return (
     <div
       ref={cardRef}
-      className="sticky top-0 w-full h-[75vh] md:h-[75vh] flex items-start justify-center bg-transparent px-4 sm:px-6 pt-[85px] md:pt-[105px]">
+      className="sticky top-0 w-full h-[82dvh] md:h-[60dvh] flex items-start justify-center bg-transparent px-4 sm:px-6 pt-[72px] sm:pt-[85px]">
 
 
 
@@ -29,15 +36,23 @@ export default function ServiceCard({ title, image, desc, progress, range, targe
           opacity,
           top: `${index * 15}px`,
           transformOrigin: "top center",
+          willChange: "transform, opacity",
+          transformStyle: "preserve-3d",
+          backfaceVisibility: "hidden",
         }}
-        className="stack-services w-full max-w-[1260px] md:h-[440px] bg-[#fcfbfe] border border-[#f0eae6] rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.10)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.09)] overflow-hidden flex flex-col md:flex-row cursor-pointer transition-all duration-300 relative"
+        className="stack-services w-full max-w-[1260px] md:h-[440px] bg-[#fcfbfe] border border-[#f0eae6] rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.10)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.09)] overflow-hidden flex flex-col md:flex-row cursor-pointer transition-shadow duration-300 relative"
       >
         {/* Left Column: Image with Parallax Scaling */}
-        <div className="w-full md:w-[40%] h-[220px] md:h-full overflow-hidden relative">
+        <div className="w-full md:w-[40%] h-[160px] sm:h-[220px] md:h-full overflow-hidden relative">
           <motion.img
             src={image.src || image}
             alt={title}
-            style={{ scale: imageScale }}
+            style={{ 
+              scale: imageScale,
+              willChange: "transform",
+              transformStyle: "preserve-3d",
+              backfaceVisibility: "hidden",
+            }}
             className="w-full h-full object-cover origin-center"
           />
           {/* Subtle gradient overlay on the image */}
@@ -45,7 +60,7 @@ export default function ServiceCard({ title, image, desc, progress, range, targe
         </div>
 
         {/* Right Column: Content */}
-        <div className="w-full md:w-[60%] p-6 sm:p-10 md:p-12 flex flex-col justify-between h-auto md:h-full">
+        <div className="w-full md:w-[60%] p-5 sm:p-10 md:p-12 flex flex-col justify-between h-auto md:h-full">
 
           <div>
             {/* 3 Dots for Services Section */}
@@ -57,7 +72,7 @@ export default function ServiceCard({ title, image, desc, progress, range, targe
               {title}
             </h3>
 
-            <p className="text-[0.92rem] sm:text-[1.02rem] text-[#6d6a65] leading-[1.7] mb-6">
+            <p className="text-[0.92rem] sm:text-[1.02rem] text-[#6d6a65] leading-[1.7] mb-4 sm:mb-6">
               {desc}
             </p>
           </div>

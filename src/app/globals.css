@@ -199,9 +199,20 @@ section {
     inset 0 0 14px 7px rgba(255, 255, 255, 0.7);
   position: relative;
   overflow: hidden;
-  margin-top: 1rem 0 1rem 0;
-  padding: 1.2rem;
+  /* margin-top: 1rem 0 1rem 0; */
+  padding: 1.2rem
 }
+
+/* @media(max-width:667px) {
+  .container-call {
+    padding-top: 4rem !important;
+  }
+
+
+} */
+
+
+
 
 .glass-card::before {
   content: '';
@@ -587,10 +598,19 @@ section {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  padding-top: 98px;
   background: transparent;
+  padding-top: 7rem;
+
+
 }
 
+@media (max-width: 768px) {
+  .hero {
+
+    padding-top: 4rem;
+
+  }
+}
 
 .hero-grid {
   position: relative;
@@ -881,13 +901,26 @@ section {
 
 /* ── CTA STRIP ── */
 .cta-strip {
-  padding: 56px 52px;
+  padding: 24px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
   flex-wrap: wrap;
 }
+
+@media (min-width: 768px) {
+  .cta-strip {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cta-strip {
+    padding: 56px 52px;
+  }
+}
+
 
 .cta-strip h2 {
   margin-bottom: 8px;
@@ -1792,4 +1825,11 @@ footer {
   footer {
     margin-left: -1rem;
   }
+}
+
+
+/* ///top contact bar */
+
+.contact-top {
+  margin-top: 4rem !important;
 }

@@ -723,12 +723,24 @@
 
     /* ── CTA STRIP ── */
     .cta-strip {
-      padding: 56px 52px;
+      padding: 24px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 32px;
       flex-wrap: wrap;
+    }
+
+    @media (min-width: 768px) {
+      .cta-strip {
+        padding: 40px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cta-strip {
+        padding: 56px 52px;
+      }
     }
 
     .cta-strip h2 {
