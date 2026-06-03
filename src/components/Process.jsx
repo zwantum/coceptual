@@ -110,7 +110,7 @@ export default function Process() {
         {/* Desktop Grid View (visible on >= sm screens) */}
         <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-[20px]">
           {steps.map((step, i) => (
-            <ScrollReveal key={i} delay={i * 0.15} type="fade-up" className="process-step h-full">
+            <ScrollReveal key={i} delay={i * 0.15} type="fade-up" className="process-step h-full b-shaddow">
               <div className="process-glass-card cursor-default">
                 <div className="bg-number">{i + 1}</div>
                 <div className="content">

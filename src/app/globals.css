@@ -1512,7 +1512,7 @@ section {
   justify-content: space-between;
   gap: 32px;
   /* flex-wrap: wrap; */
-  background: var(--brand-gray);
+  background: var(--grad);
   /* background: black; */
   border-radius: 28px;
   position: relative;
@@ -1832,4 +1832,9 @@ footer {
 
 .contact-top {
   margin-top: 4rem !important;
+}
+
+.b-shaddow {
+  box-shadow: 0 8px 32px #0000001a, inset 0 1px #ffffff80, inset 0 -1px #ffffff1a, inset 0 0 14px 7px #ffffffb3;
+  border-radius: 25px;
 }
