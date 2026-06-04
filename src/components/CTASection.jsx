@@ -25,10 +25,10 @@ export default function CTASection() {
             </p>
           </div>
 
-          <div className="cta2-btns flex flex-nowrap gap-1 w-full md:w-auto shrink-0 relative z-10">
+          <div className="cta2-btns flex flex-col sm:flex-row gap-3 w-full md:w-auto justify-center items-center shrink-0 relative z-10">
             <a
               href="tel:+91XXXXXXXXXX"
-              className="btn btn-ghost flex-1 md:flex-none justify-center bg-white/15 text-white border-[1.5px] border-white/40 px-4 md:px-[26px] py-[13px] rounded-[10px] hover:bg-white/25 transition-all text-sm md:text-[0.93rem] whitespace-nowrap"
+              className="btn btn-ghost w-full sm:w-auto justify-center bg-white/15 text-white border-[1.5px] border-white/40 px-4 md:px-[26px] py-[13px] rounded-[10px] hover:bg-white/25 transition-all text-sm md:text-[0.93rem] max-w-[280px] sm:max-w-none whitespace-nowrap"
             >
               <i className="fa-solid fa-phone"></i> Call Now
             </a>
@@ -36,7 +36,7 @@ export default function CTASection() {
               href="https://wa.me/91XXXXXXXXXX"
               target="_blank"
               rel="noreferrer"
-              className="btn btn-ghost flex-1 md:flex-none justify-center bg-white/15 text-white border-[1.5px] border-white/40 px-4 md:px-[26px] py-[13px] rounded-[10px] hover:bg-white/25 transition-all text-sm md:text-[0.93rem] whitespace-nowrap"
+              className="btn btn-ghost w-full sm:w-auto justify-center bg-white/15 text-white border-[1.5px] border-white/40 px-4 md:px-[26px] py-[13px] rounded-[10px] hover:bg-white/25 transition-all text-sm md:text-[0.93rem] max-w-[280px] sm:max-w-none whitespace-nowrap"
             >
               <i className="fab fa-whatsapp" style={{ fontSize: "20px" }}></i> WhatsApp
             </a>

@@ -1561,18 +1561,31 @@ section {
 
 .cta2-btns {
   display: flex;
-  /* grid-template-columns: repeat(2, 1fr); */
   gap: 12px;
-  flex-wrap: nowrap;
   flex-shrink: 0;
   position: relative;
   z-index: 1;
-  /* background-color: #1313ff; */
-  min-width: 20rem;
-  align-items: start;
-  /* margin-left: -2.5rem; */
-  /* left: -50%; */
-  justify-content: start;
+}
+
+@media (max-width: 767px) {
+  .cta2-btns {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .cta2-btns .btn {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta2-btns {
+    flex-wrap: nowrap;
+    min-width: 20rem;
+    align-items: start;
+    justify-content: start;
+  }
 }
 
 .btn-white {
